@@ -16,3 +16,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 ./frontend/DS_Store
+
+/meteocons-icons
+/meteocons-icons.zip
