@@ -1,5 +1,8 @@
 from flask import Flask, jsonify
+from flask_cors import CORS, cross_origin
+
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/weather/london")
 def hello():
@@ -12,4 +15,4 @@ def hello():
   return jsonify(weather_in_london)
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

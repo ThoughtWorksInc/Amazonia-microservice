@@ -14,9 +14,10 @@ class App extends Component {
   }
 
   getData() {
-    return fetch('http://127.0.0.1:5000/weather/london', {mode: 'no-cors'})
-    .then((response) => {
-    console.log(response);
+    return fetch('http://127.0.0.1:5000/weather/london')
+    .then(response => response.json())
+    .then((responseJson) => {
+      console.log(responseJson)
     })
     .catch((error) => {
       console.error(error);
