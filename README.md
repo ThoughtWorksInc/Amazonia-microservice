@@ -2,7 +2,7 @@
 
 ## Frontend
 
-* Shows weather and events 
+* Shows weather and events
 
 ## Backends
 
@@ -15,7 +15,7 @@
   {
     "location": "London",
     "temperature": 25,
-    "forecast": "Sunny" 
+    "forecast": "Sunny"
   }
 
 * Events service
@@ -26,10 +26,10 @@
   Response:
   [
     {
-      "id": 123
+      "id": 123,
       "location": "142 Somewhere, London",
       "when": "2017-04-08T14:30",
-      "what": "Some meetup with code"
+      "what": "Some meetup with code",
       "link": "http://localhost:2302/events/123"
     },
     {
