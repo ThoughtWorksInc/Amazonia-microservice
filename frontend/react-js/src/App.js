@@ -14,7 +14,7 @@ class App extends Component {
   }
 
   getData() {
-    return fetch('http://127.0.0.1:5000/weather/london')
+    return fetch('http://localhost:4567/weather/london')
     .then(response => response.json())
     .then((responseJson) => {
       this.setState({
@@ -34,7 +34,7 @@ class App extends Component {
           <h2>Welcome to Reactive Weather</h2>
         </div>
         <p className="App-intro">
-          Hello world! Your weather in {this.state.weather.location}...is {this.state.weather.forecast} with a grand {this.state.weather.temperature}{this.state.weather.temperatureUnits}
+          Hello world! Your weather in {this.state.weather.location} is {this.state.weather.forecast} with a grand {this.state.weather.temperature} {this.state.weather.temperatureUnits}
         </p>
         <img src={sun} className="sun" alt="sun" />
       </div>
