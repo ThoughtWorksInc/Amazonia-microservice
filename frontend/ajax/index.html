@@ -3,13 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"> -->
 
     <title>Ajax App</title>
   </head>
   <body>
     <div id="root"></div>
-    <p>HELLO WORLD</p>
+    <button id="ajaxButton" type="button">Make a request</button>
+
+    <script>
+    (function() {
+      var httpRequest;
+      document.getElementById("ajaxButton").addEventListener('click', makeRequest);
+
+      function makeRequest() {
+        httpRequest = new XMLHttpRequest();
+
+        if (!httpRequest) {
+          alert('Giving up :( Cannot create an XMLHTTP instance');
+          return false;
+        }
+        httpRequest.onreadystatechange = alertContents;
+        httpRequest.open('GET', 'http://127.0.0.1:5000/weather/london');
+        httpRequest.send();
+      }
+
+      function alertContents() {
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+          if (httpRequest.status === 200) {
+            alert(httpRequest.responseText);
+          } else {
+            alert('There was a problem with the request.');
+          }
+        }
+      }
+    })();
+    </script>
 
   </body>
 </html>
