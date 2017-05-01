@@ -14,9 +14,9 @@ end
 get '/weather/london' do
   weather_in_london = {
      "location": "London",
-     "temperature": 35,
+     "temperature": 30,
      "temperatureUnits": "Celsius",
-     "forecast": "Sunny"
+     "forecast": "Cloudy"
    }
    JSON.generate(weather_in_london)
 end
