@@ -12,7 +12,5 @@ end
 
 get '/events/london' do
   file = File.read('/Users/tam/Documents/Amazonia-microservice/data/events.json')
-  p file
-  p "random"
-  file
+  JSON.parse(file)
 end
