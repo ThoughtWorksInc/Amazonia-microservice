@@ -10,13 +10,9 @@ before do
   response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
 end
 
-
-get '/weather/london' do
-  weather_in_london = {
-     "location": "London",
-     "temperature": 35,
-     "temperatureUnits": "Celsius",
-     "forecast": "Sunny"
-   }
-   JSON.generate(weather_in_london)
+get '/events/london' do
+  file = File.read('/Users/tam/Documents/Amazonia-microservice/data/events.json')
+  p file
+  p "random"
+  file
 end

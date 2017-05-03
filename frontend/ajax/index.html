@@ -23,7 +23,7 @@
           return false;
         }
         httpRequest.onreadystatechange = alertContents;
-        httpRequest.open('GET', 'http://127.0.0.1:5000/weather/london');
+        httpRequest.open('GET', 'http://localhost:4567/weather/london');
         httpRequest.send();
       }
 
