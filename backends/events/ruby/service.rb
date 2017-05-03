@@ -11,6 +11,8 @@ before do
 end
 
 get '/events/london' do
-  file = File.read('/Users/tam/Documents/Amazonia-microservice/data/events.json')
-  JSON.parse(file)
+  file = File.read('./data/events.json')
+  json_events = JSON.parse(file)
+  events = json_events['events']
+  JSON.generate(events)
 end

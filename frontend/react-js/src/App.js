@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   getWeather() {
-    return fetch('http://127.0.0.1:5000/weather/london')
+    return fetch('http://localhost:5000/weather/london')
     .then(response => response.json())
     .then((responseJson) => {
       this.setState({
@@ -28,7 +28,7 @@ class App extends Component {
   }
 
   getEvents() {
-    return fetch('http://127.0.0.1:4567/events/london')
+    return fetch('http://localhost:4567/events/london')
     .then(response => response.json())
     .then((responseJson) => {
       this.setState({

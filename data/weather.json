@@ -1,8 +1,8 @@
 {
-    "weather" : {
-    "location": "London",
-    "temperature": 35,
-    "temperatureUnits": "Celsius",
-    "forecast": "Sunny"
+  "weather":{
+    "location":"London",
+    "temperature":35,
+    "temperatureUnits":"Celsius",
+    "forecast":"Sunny"
   }
 }
