@@ -45,7 +45,7 @@ class App extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h2>Welcome to Reactive Weather</h2>
+          <h2>Weather and Events by React JS</h2>
         </div>
         <p className="App-weather">
           Hello world! Your weather in {this.state.weather.location} is {this.state.weather.forecast} with a grand {this.state.weather.temperature} {this.state.weather.temperatureUnits}

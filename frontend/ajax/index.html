@@ -4,33 +4,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Ajax App</title>
+    <title>XMLHttpRequest App</title>
+    <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div id="root"></div>
-    <button id="ajaxButton" type="button">Make a request</button>
-
+    <div class="App-header">
+      <h2>Weather and Events by XMLHttpRequest</h2>
+    </div>
     <script>
     (function() {
-      var httpRequest;
-      document.getElementById("ajaxButton").addEventListener('click', makeRequest);
 
-      function makeRequest() {
-        httpRequest = new XMLHttpRequest();
-
-        if (!httpRequest) {
+        var weatherHttpRequest = new XMLHttpRequest();
+        var eventsHttpRequest = new XMLHttpRequest();
+        if (!weatherHttpRequest || !eventsHttpRequest) {
           alert('Giving up :( Cannot create an XMLHTTP instance');
           return false;
         }
-        httpRequest.onreadystatechange = alertContents;
-        httpRequest.open('GET', 'http://localhost:4567/weather/london');
-        httpRequest.send();
-      }
+        weatherHttpRequest.onreadystatechange = function(){updateContents(weatherHttpRequest);};
+        eventsHttpRequest.onreadystatechange = function(){updateContents(eventsHttpRequest);};
+        weatherHttpRequest.open('GET', 'http://localhost:5000/weather/london');
+        eventsHttpRequest.open('GET', 'http://localhost:4567/events/london');
+        weatherHttpRequest.send();
+        eventsHttpRequest.send();
 
-      function alertContents() {
+      function updateContents(httpRequest) {
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {
-            alert(httpRequest.responseText);
+            console.log("apparently successful");
+            var para = document.createElement("P");
+            para.appendChild(document.createTextNode(httpRequest.responseText));
+            document.body.appendChild(para);
           } else {
             alert('There was a problem with the request.');
           }

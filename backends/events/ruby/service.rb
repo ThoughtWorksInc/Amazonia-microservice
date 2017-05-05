@@ -7,7 +7,7 @@ require 'json'
 # set :views, settings.root + "views"
 
 before do
-  response.headers['Access-Control-Allow-Origin'] = 'http://localhost:3000'
+  response.headers['Access-Control-Allow-Origin'] = 'http://localhost:8000'
 end
 
 get '/events/london' do
